@@ -1,0 +1,53 @@
+
+.benu {
+ /*  text-align: center; */
+ position: absolute;
+}
+
+.benu li {
+  list-style-type: none;
+  
+  
+
+   
+}
+/*
+.menu a {
+  color: #004300
+}
+*/
+/*.hidden-table{
+   display: none;
+}*/
+li.majorcat {
+  display: inline-block;
+  background-color: #f222ff;
+  width: 260px;
+  border: solid 1px #000000;
+  background-color: #dffff0;
+  text-align: center;
+}
+
+/*
+.sub-benu {
+  height: 0;
+  opacity:  0;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  color: blue;
+  list-style-type: none;
+  width: 20%;
+}*/
+.sub-benu {
+  position: absolute;
+  display: none;
+  height: 0;
+  opacity:  0;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  color: blue;
+  list-style-type: none;
+  width: auto;
+  padding :-20px 10px 10px 10px;
+}
+

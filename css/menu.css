@@ -1,0 +1,262 @@
+body { 
+	background: #EEE; 
+	overflow-x:hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.container {
+    position: relative;
+    margin: 0px auto;
+    padding: 50px 0;
+    clear: both;
+}
+.benu-item {
+  list-style-type: none; /*Убрали маркеры у списков*/
+}
+@media  (min-width: 1200px) {
+    .container {
+        width: 1210px;
+    }
+}
+
+@media  (max-width: 1199px) {
+    .container {
+        width: 1030px;
+    }
+}
+
+
+
+
+.mcd-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgb(134, 28, 28);
+  height: 50px; /* высота меню*/
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.mcd-menu li {
+  float: left;
+  position: relative;
+  
+}
+.mcd-menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 16px 20px;
+  text-align: center;
+  color: #777;
+ border-right: 1px solid #acabb1; /* бордюр около категорий*/
+}
+
+.mcd-menu li:hover > a {
+  color: #e67e22;
+  background-color: #a1a3b1;
+}
+.mcd-menu li a.active {
+  position: relative;
+  color: #e67e22;
+  border:0;
+  border-top: 4px solid #e67e22;
+  border-bottom: 4px solid #e67e22;
+  margin-top: -4px;
+  box-shadow: 0 0 5px #DDD;
+  -moz-box-shadow: 0 0 5px #DDD;
+  -webkit-box-shadow: 0 0 5px #DDD;
+}
+.mcd-menu li a.active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45%;
+  border-top: 5px solid #e67e22;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+@-webkit-keyframes moveFromTop {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(200%);
+        -moz-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+        -o-transform: translateY(200%);
+        transform: translateY(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes moveFromLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+        -moz-transform: translateX(200%);
+        -ms-transform: translateX(200%);
+        -o-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes moveFromRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(-200%);
+        -moz-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+        -o-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+
+
+.mcd-menu li ul,
+.mcd-menu li ul li ul {
+  position: absolute;
+  height: auto;
+  min-width: 200px; /*ширина выпадающего меню*/
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  border-top: 4px solid #e67e22;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+  top: 45px; /*было 130*/
+  z-index: 1000;
+}
+.mcd-menu li ul:before {  /*треугольниек для меню которое вниз выходит*/
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 47%;
+  border-bottom: 5px solid #e67e22;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.mcd-menu li:hover > ul,
+.mcd-menu li ul li:hover > ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  top: 50px; /*расстояние от верха меню*/
+}
+.mcd-menu li ul li {
+  float: none;
+}
+.mcd-menu li ul li a {
+  padding: 10px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #EEE;
+}
+
+.mcd-menu li ul li ul {
+  left: 210px; /*230 было - расстояние до бокового меню*/
+  top: 0px;
+  border: 0;
+  border-left: 4px solid #e67e22;
+}  
+.mcd-menu li ul li ul:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -14px;
+  border-right: 5px solid #e67e22;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+}
+.mcd-menu li ul li:hover > ul {
+  top: 0px;
+  left: 200px; /*должно быть 200 иначе меню боковое в сторону уползает*/
+}
+
+
+
+.mcd-menu li.float {
+  float: right;
+}
+.mcd-menu li a.search {
+  padding: 5px 20px 30px 10px;
+}
+.mcd-menu li a.search i {
+  margin: 0;
+  display: inline-block;
+  font-size: 18px;
+}
+.mcd-menu li a.search input {
+  border: 1px solid #EEE;
+  padding: 10px;
+  background: #FFF;
+  outline: none;
+  color: rgb(6, 124, 85);
+}
+.mcd-menu li a.search button {
+  border: 1px solid #e67e22;
+  padding: 10px;
+  background: #e67e22;
+  outline: none;
+  color: #FFF;
+  margin-left: -4px;
+}
+.mcd-menu li a.search input:focus {
+  border: 1px solid #e67e22;
+}
+
+
+.search-mobile { 
+	display:none !important;
+	background:#e67e22;
+	border-left:1px solid #e67e22;
+	border-radius:0 3px 3px 0;
+}
+.search-mobile i { 
+	color:#FFF; 
+	margin:0 !important;
+}
+
+
+@media (max-width: 1199px) {
+    .mcd-menu li a.search input {
+		width:100px;
+	}
+}
